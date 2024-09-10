@@ -1,0 +1,37 @@
+.portfolioHeader {
+	position: relative;
+	min-height: 50svh;
+	background-image: url("../../../Assets/Pictures/sztukateria\ schody.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.portfolioHeader h3 {
+	font-size: 3rem;
+	color: white;
+	margin-bottom: 2em;
+	z-index: 3;
+	max-width: 60%;
+}
+.portfolioHeaderShadow {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1399.98px) {
+	.portfolioHeader h3 {
+		max-width: 80%;
+		text-align: center;
+	}
+}
+@media (max-width: 810px) {
+	.portfolioHeader h3 {
+		font-size: 2rem;
+	}
+}

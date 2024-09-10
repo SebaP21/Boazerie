@@ -1,0 +1,8 @@
+.productsWrapper {
+	min-height: 100svh;
+	background-color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

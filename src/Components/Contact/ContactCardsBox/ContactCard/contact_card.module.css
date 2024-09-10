@@ -1,0 +1,13 @@
+.contactCard {
+	border: 1px solid black;
+	border-radius: 10px;
+	min-height: 45svh;
+	min-width: 350px;
+	overflow: hidden;
+	background-color: #fff;
+	box-shadow: 0px 3px 10px grey;
+	
+}
+.contactCard h5 {
+	font-size: 1.5rem;
+}

@@ -1,0 +1,21 @@
+.header {
+	min-height: 20svh;
+	width: 100%;
+	background-color: black;
+}
+
+.section {
+	width: 100%;
+	background-color: var(--background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	background-color: #fff;
+	min-height: 45svh;
+	width: 60%;
+	padding: 2em;
+	margin: 2em;
+}

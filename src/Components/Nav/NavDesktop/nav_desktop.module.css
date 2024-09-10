@@ -1,0 +1,36 @@
+.nav {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	top: 2em;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 85%;
+	min-height: 10vh;
+	z-index: 1000;
+	/* margin: 0 3em; */
+	/* background-color: red; */
+}
+.links {
+	min-width: 30%;
+	display: flex;
+	justify-content: space-evenly;
+	font-size: 1.2rem;
+	color: white;
+	gap: 20px;
+	text-shadow: 2px 2px 5px black;
+}
+
+.links a {
+	transition: color 0.2s;
+}
+
+.links a:hover {
+	color: var(--accent-color);
+}
+@media (max-width: 992px) {
+	.nav {
+		display: none;
+	}
+}

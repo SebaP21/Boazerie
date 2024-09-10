@@ -1,0 +1,137 @@
+.showMobileButton {
+	position: absolute;
+	top: 2em;
+	right: 0.2em;
+	z-index: 10000;
+	content: "";
+	width: 3.5em;
+	height: 3px;
+	background-color: white;
+}
+.showMobileButton::before {
+	position: absolute;
+	top: 0.7em;
+	right: 0;
+	z-index: 10000;
+	content: "";
+	width: 3em;
+	height: 3px;
+	background-color: white;
+}
+.showMobileButton::after {
+	position: absolute;
+	top: 1.4em;
+	right: 0;
+	z-index: 10000;
+	content: "";
+	width: 2.5em;
+	height: 3px;
+	background-color: white;
+}
+.showMobileButtonContainer {
+	position: absolute;
+	top: 2em;
+	right: 2em;
+	z-index: 12000;
+	cursor: pointer;
+	padding: 2em;
+}
+
+.nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10000;
+	background-color: rgba(0, 0, 0, 0.918);
+	min-height: 90svh;
+	min-width: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	transform: translateX(150%);
+	animation: fade-left 0.5s forwards;
+	overflow: hidden;
+}
+.button {
+	display: flex;
+	width: 100%;
+	justify-content: end;
+}
+.button button {
+	font-size: 2rem;
+	padding: 2em;
+	border: none;
+	color: var(--accent-color);
+}
+.button button:hover {
+	animation: rotate 1s forwards;
+}
+
+.logo {
+	padding: 2em 0;
+}
+.navLinks {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	min-height: 40svh;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.navLinks a {
+	padding: 0.5em;
+	border-bottom: 1px solid var(--accent-color);
+	font-size: 1.2rem;
+	transition: 0.2s;
+}
+.navLinks a:hover {
+	color: var(--accent-color);
+	border-bottom: 1px solid white;
+}
+
+.navNotActive {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 90%;
+	min-height: 10vh;
+	z-index: 1000;
+	margin: 0 2em;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(260deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes fade-left {
+	to {
+		transform: translateX(0);
+	}
+}
+
+@media (min-width: 992px) {
+	.nav,
+	.navNotActive {
+		display: none;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.navNotActive {
+		/* min-width: 100%; */
+		margin: 0;
+		min-width: 100%;
+	}
+}

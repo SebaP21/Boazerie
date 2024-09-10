@@ -1,0 +1,32 @@
+.contactHeader {
+	position: relative;
+	min-height: 30svh;
+	background-image: url("../../../Assets/Pictures/tlo\ kontakt\ boazeria.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.contactHeader h3 {
+	font-size: 3rem;
+	color: white;
+	margin-bottom: 1em;
+	z-index: 3;
+    max-width: 60%;
+}
+.contactHeaderShadow {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 991.98px) { 
+	.contactHeader h3 {
+		font-size: 2rem;
+	}
+ }

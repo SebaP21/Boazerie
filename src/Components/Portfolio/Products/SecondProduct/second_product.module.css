@@ -1,0 +1,126 @@
+.productContent {
+	/* min-height: 70svh; */
+	width: 68%;
+
+	padding-bottom: 2em;
+}
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1em;
+	margin-bottom: -2em;
+}
+.title p {
+	font-size: 12rem;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.05);
+}
+.description {
+	padding: 1em;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	justify-content: center;
+}
+.descriptionImages {
+	display: grid;
+	grid-template-columns: repeat(4, 250px);
+	grid-gap: 10px;
+	justify-content: center;
+}
+.descriptionDetails h3 {
+	font-size: 2rem;
+}
+.descriptionDetails .break {
+	content: "";
+	height: 1.5px;
+	width: 50%;
+	background-color: var(--accent-color);
+}
+.descriptionDetails {
+	display: flex;
+	flex-direction: column;
+	padding: 0 2em;
+	gap: 2em;
+}
+.image {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	cursor: zoom-in;
+}
+.image img {
+	min-height: 350px;
+	object-fit: cover;
+	transition: transform 0.2s;
+}
+.image img:hover {
+	transform: scale(1.1);
+}
+
+@media (max-width: 1399.98px) {
+	.title p {
+		font-size: 10rem;
+	}
+	.descriptionImages {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.productContent {
+		width: 90%;
+	}
+	.descriptionDetails {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.title p {
+		font-size: 8rem;
+	}
+	.descriptionDetails {
+		padding: 3em;
+	}
+}
+@media (max-width: 991.98px) {
+	.title p {
+		font-size: 6.2rem;
+	}
+	.descriptionImages {
+		padding-top: 1em;
+	}
+	.productContent {
+		width: 100%;
+	}
+}
+@media (max-width: 767.98px) {
+	.title p {
+		font-size: 4.5rem;
+	}
+	.descriptionImages {
+		padding-top: 1em;
+	}
+	.descriptionDetails {
+		padding: 1em;
+	}
+}
+@media (max-width: 575.98px) {
+    .title p {
+        font-size: 3.5rem;
+    }
+	.description {
+		display: flex;
+        flex-direction: column;
+	}
+    .descriptionDetails{
+        margin-top: -1em;
+        justify-content: center;
+        align-items: center;
+    }
+    .descriptionImages{
+        width: 90%;
+        margin: 0 auto;
+    }
+}

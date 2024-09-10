@@ -1,0 +1,16 @@
+.section {
+	min-height: 60svh;
+	width: 100%;
+	background-color: var(--background-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.wrapper {
+	width: 90%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	gap: 2em;
+	margin: 2em 0;
+}

@@ -1,0 +1,92 @@
+.sectionWrapper {
+	max-width: 80%;
+	margin: 5em auto;
+	display: flex;
+	justify-content: space-evenly;
+}
+.faqTitle {
+	max-width: 500px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5em;
+	padding: 1em;
+}
+.faqTitle h4 {
+	font-size: 1.5rem;
+}
+.faqTitle h2 {
+	font-size: 3rem;
+}
+.faqContent {
+	min-width: 700px;
+	max-width: 700px;
+	padding: 0 2em;
+	cursor: pointer;
+}
+.faqContent h6 {
+    font-size: 1.1rem;
+}
+
+.break {
+	content: "";
+	background-color: var(--accent-color);
+	height: 2px;
+	width: 30%;
+}
+.faqTitle button:hover {
+	background-color: var(--accent-color);
+}
+
+.faqCard {
+	padding: 1.2em;
+	border-bottom: 1px solid black;
+}
+.faqCardActive{
+    padding: 1em;
+	border-bottom: 1px solid black;
+}
+.faqCardActive h6 {
+    color: var(--accent-color);
+}
+.answer {
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+
+
+@media (max-width:1190px){
+	.sectionWrapper{
+		max-width: 90%;
+	}
+	.faqContent {
+		min-width: 600px;
+		max-width: 600px;
+	}
+}
+@media (max-width:1000px){
+	.faqContent{
+		min-width: 500px;
+		max-width: 500px;
+	}
+}
+@media (max-width:850px){
+	.sectionWrapper{
+		flex-wrap: wrap;
+		min-width: 90%;
+		gap: 2em;
+		overflow: hidden;
+	}
+	.faqContent{
+		min-width: 100%;
+		max-width: 100%;
+		
+	}
+}
+
+@media (max-width: 575.98px) {
+	.faqContent{
+		padding: 0.5em;
+	}
+ }
