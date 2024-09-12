@@ -29,7 +29,6 @@ export const NavMobile = () => {
 								src={logo}
 								alt='logo-boazerie'
 								width={250}
-							
 							/>
 						</Link>
 					</div>
@@ -58,11 +57,11 @@ export const NavMobile = () => {
 				<div className={styles.navNotActive}>
 					<div className={styles.logo}>
 						<Link href={"/"}>
-						<Image
-							src={logo}
-							alt='logo'
-							width={200}
-						/>
+							<Image
+								src={logo}
+								alt='logo'
+								width={200}
+							/>
 						</Link>
 					</div>
 					<div

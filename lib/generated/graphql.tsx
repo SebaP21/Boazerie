@@ -7390,6 +7390,8 @@ export type PrivacyPolicyContent_Fields = {
 /** The &quot;ProductDescription&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
 export type ProductDescription = AcfFieldGroup & AcfFieldGroupFields & ProductDescription_Fields & {
   __typename?: 'ProductDescription';
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  descriptiongallery?: Maybe<ProductDescriptionDescriptiongallery>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
@@ -7399,8 +7401,33 @@ export type ProductDescription = AcfFieldGroup & AcfFieldGroupFields & ProductDe
   portfolioProductDescription?: Maybe<Scalars['String']['output']>;
 };
 
+/** The &quot;ProductDescriptionDescriptiongallery&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type ProductDescriptionDescriptiongallery = AcfFieldGroup & AcfFieldGroupFields & ProductDescriptionDescriptiongallery_Fields & {
+  __typename?: 'ProductDescriptionDescriptiongallery';
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
+  obrazek?: Maybe<AcfMediaItemConnectionEdge>;
+};
+
+/** Interface representing fields of the ACF &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
+export type ProductDescriptionDescriptiongallery_Fields = {
+  /**
+   * The name of the field group
+   * @deprecated Use __typename instead
+   */
+  fieldGroupName?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
+  obrazek?: Maybe<AcfMediaItemConnectionEdge>;
+};
+
 /** Interface representing fields of the ACF &quot;ProductDescription&quot; Field Group */
 export type ProductDescription_Fields = {
+  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  descriptiongallery?: Maybe<ProductDescriptionDescriptiongallery>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
@@ -12852,6 +12879,21 @@ export type FaqContentQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type FaqContentQuery = { __typename?: 'RootQuery', allFaqBox?: { __typename?: 'RootQueryToFaqBoxConnection', nodes: Array<{ __typename?: 'FaqBox', content?: string | null, title?: string | null }> } | null };
 
+export type LogoContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type LogoContentQuery = { __typename?: 'RootQuery', allLogo?: { __typename?: 'RootQueryToLogoConnection', nodes: Array<{ __typename?: 'Logo', title?: string | null, logoImage?: { __typename?: 'LogoImage', logoImage?: { __typename?: 'AcfMediaItemConnectionEdge', node: { __typename?: 'MediaItem', link?: string | null, title?: string | null, slug?: string | null } } | null } | null }> } | null };
+
+export type PrivacyPolicyContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PrivacyPolicyContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', title?: string | null, privacyPolicyContent?: { __typename?: 'PrivacyPolicyContent', privacypolicy?: string | null } | null } | null };
+
+export type ContactContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type ContactContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', contactForm?: { __typename?: 'ContactForm', adres?: string | null, eMail?: string | null, tel?: string | null } | null } | null };
+
 
 export const GetPostsDocument = gql`
     query GetPosts {
@@ -13192,3 +13234,138 @@ export type FaqContentQueryHookResult = ReturnType<typeof useFaqContentQuery>;
 export type FaqContentLazyQueryHookResult = ReturnType<typeof useFaqContentLazyQuery>;
 export type FaqContentSuspenseQueryHookResult = ReturnType<typeof useFaqContentSuspenseQuery>;
 export type FaqContentQueryResult = Apollo.QueryResult<FaqContentQuery, FaqContentQueryVariables>;
+export const LogoContentDocument = gql`
+    query LogoContent {
+  allLogo {
+    nodes {
+      logoImage {
+        logoImage {
+          node {
+            link
+            title(format: RENDERED)
+            slug
+          }
+        }
+      }
+      title(format: RENDERED)
+    }
+  }
+}
+    `;
+
+/**
+ * __useLogoContentQuery__
+ *
+ * To run a query within a React component, call `useLogoContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLogoContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLogoContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useLogoContentQuery(baseOptions?: Apollo.QueryHookOptions<LogoContentQuery, LogoContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<LogoContentQuery, LogoContentQueryVariables>(LogoContentDocument, options);
+      }
+export function useLogoContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LogoContentQuery, LogoContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<LogoContentQuery, LogoContentQueryVariables>(LogoContentDocument, options);
+        }
+export function useLogoContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<LogoContentQuery, LogoContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<LogoContentQuery, LogoContentQueryVariables>(LogoContentDocument, options);
+        }
+export type LogoContentQueryHookResult = ReturnType<typeof useLogoContentQuery>;
+export type LogoContentLazyQueryHookResult = ReturnType<typeof useLogoContentLazyQuery>;
+export type LogoContentSuspenseQueryHookResult = ReturnType<typeof useLogoContentSuspenseQuery>;
+export type LogoContentQueryResult = Apollo.QueryResult<LogoContentQuery, LogoContentQueryVariables>;
+export const PrivacyPolicyContentDocument = gql`
+    query privacyPolicyContent {
+  pageBy(pageId: 188) {
+    privacyPolicyContent {
+      privacypolicy
+    }
+    title(format: RENDERED)
+  }
+}
+    `;
+
+/**
+ * __usePrivacyPolicyContentQuery__
+ *
+ * To run a query within a React component, call `usePrivacyPolicyContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePrivacyPolicyContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePrivacyPolicyContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePrivacyPolicyContentQuery(baseOptions?: Apollo.QueryHookOptions<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>(PrivacyPolicyContentDocument, options);
+      }
+export function usePrivacyPolicyContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>(PrivacyPolicyContentDocument, options);
+        }
+export function usePrivacyPolicyContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>(PrivacyPolicyContentDocument, options);
+        }
+export type PrivacyPolicyContentQueryHookResult = ReturnType<typeof usePrivacyPolicyContentQuery>;
+export type PrivacyPolicyContentLazyQueryHookResult = ReturnType<typeof usePrivacyPolicyContentLazyQuery>;
+export type PrivacyPolicyContentSuspenseQueryHookResult = ReturnType<typeof usePrivacyPolicyContentSuspenseQuery>;
+export type PrivacyPolicyContentQueryResult = Apollo.QueryResult<PrivacyPolicyContentQuery, PrivacyPolicyContentQueryVariables>;
+export const ContactContentDocument = gql`
+    query ContactContent {
+  pageBy(pageId: 85) {
+    contactForm {
+      adres
+      eMail
+      tel
+    }
+  }
+}
+    `;
+
+/**
+ * __useContactContentQuery__
+ *
+ * To run a query within a React component, call `useContactContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `useContactContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useContactContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useContactContentQuery(baseOptions?: Apollo.QueryHookOptions<ContactContentQuery, ContactContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<ContactContentQuery, ContactContentQueryVariables>(ContactContentDocument, options);
+      }
+export function useContactContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ContactContentQuery, ContactContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<ContactContentQuery, ContactContentQueryVariables>(ContactContentDocument, options);
+        }
+export function useContactContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<ContactContentQuery, ContactContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<ContactContentQuery, ContactContentQueryVariables>(ContactContentDocument, options);
+        }
+export type ContactContentQueryHookResult = ReturnType<typeof useContactContentQuery>;
+export type ContactContentLazyQueryHookResult = ReturnType<typeof useContactContentLazyQuery>;
+export type ContactContentSuspenseQueryHookResult = ReturnType<typeof useContactContentSuspenseQuery>;
+export type ContactContentQueryResult = Apollo.QueryResult<ContactContentQuery, ContactContentQueryVariables>;
