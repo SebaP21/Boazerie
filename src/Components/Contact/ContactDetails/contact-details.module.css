@@ -1,0 +1,16 @@
+.contactItems {
+	padding: 3em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+	align-items: flex-start;
+}
+.item {
+	cursor: pointer;
+	transition: 0.2s;
+}
+.item:hover {
+	color: var(--accent-color);
+	transform: scale(1.03);
+}

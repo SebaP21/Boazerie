@@ -71,6 +71,17 @@ export type AcfFieldGroupFields = {
   fieldGroupName?: Maybe<Scalars['String']['output']>;
 };
 
+/** Connection between the ProductDescription_Fields type and the MediaItem type */
+export type AcfMediaItemConnection = Connection & MediaItemConnection & {
+  __typename?: 'AcfMediaItemConnection';
+  /** Edges for the AcfMediaItemConnection connection */
+  edges: Array<AcfMediaItemConnectionEdge>;
+  /** The nodes of the connection, without the edges */
+  nodes: Array<MediaItem>;
+  /** Information about pagination in a connection. */
+  pageInfo: AcfMediaItemConnectionPageInfo;
+};
+
 /** Connection between the LogoImage_Fields type and the MediaItem type */
 export type AcfMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToOneConnection & {
   __typename?: 'AcfMediaItemConnectionEdge';
@@ -78,6 +89,21 @@ export type AcfMediaItemConnectionEdge = Edge & MediaItemConnectionEdge & OneToO
   cursor?: Maybe<Scalars['String']['output']>;
   /** The node of the connection, without the edges */
   node: MediaItem;
+};
+
+/** Page Info on the &quot;AcfMediaItemConnection&quot; */
+export type AcfMediaItemConnectionPageInfo = MediaItemConnectionPageInfo & PageInfo & WpPageInfo & {
+  __typename?: 'AcfMediaItemConnectionPageInfo';
+  /** When paginating forwards, the cursor to continue. */
+  endCursor?: Maybe<Scalars['String']['output']>;
+  /** When paginating forwards, are there more items? */
+  hasNextPage: Scalars['Boolean']['output'];
+  /** When paginating backwards, are there more items? */
+  hasPreviousPage: Scalars['Boolean']['output'];
+  /** Raw schema for page */
+  seo?: Maybe<SeoPostTypePageInfo>;
+  /** When paginating backwards, the cursor to continue. */
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from. */
@@ -7390,51 +7416,50 @@ export type PrivacyPolicyContent_Fields = {
 /** The &quot;ProductDescription&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
 export type ProductDescription = AcfFieldGroup & AcfFieldGroupFields & ProductDescription_Fields & {
   __typename?: 'ProductDescription';
-  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
-  descriptiongallery?: Maybe<ProductDescriptionDescriptiongallery>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;gallery&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  galeriazdjec?: Maybe<AcfMediaItemConnection>;
   /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
   portfolioProductDescription?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  tytulProduktu?: Maybe<Scalars['String']['output']>;
 };
 
-/** The &quot;ProductDescriptionDescriptiongallery&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
-export type ProductDescriptionDescriptiongallery = AcfFieldGroup & AcfFieldGroupFields & ProductDescriptionDescriptiongallery_Fields & {
-  __typename?: 'ProductDescriptionDescriptiongallery';
-  /**
-   * The name of the field group
-   * @deprecated Use __typename instead
-   */
-  fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
-  obrazek?: Maybe<AcfMediaItemConnectionEdge>;
-};
 
-/** Interface representing fields of the ACF &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
-export type ProductDescriptionDescriptiongallery_Fields = {
-  /**
-   * The name of the field group
-   * @deprecated Use __typename instead
-   */
-  fieldGroupName?: Maybe<Scalars['String']['output']>;
-  /** Field of the &quot;image&quot; Field Type added to the schema as part of the &quot;ProductDescriptionDescriptiongallery&quot; Field Group */
-  obrazek?: Maybe<AcfMediaItemConnectionEdge>;
+/** The &quot;ProductDescription&quot; Field Group. Added to the Schema by &quot;WPGraphQL for ACF&quot;. */
+export type ProductDescriptionGaleriazdjecArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /** Interface representing fields of the ACF &quot;ProductDescription&quot; Field Group */
 export type ProductDescription_Fields = {
-  /** Field of the &quot;group&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
-  descriptiongallery?: Maybe<ProductDescriptionDescriptiongallery>;
   /**
    * The name of the field group
    * @deprecated Use __typename instead
    */
   fieldGroupName?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;gallery&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  galeriazdjec?: Maybe<AcfMediaItemConnection>;
   /** Field of the &quot;textarea&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
   portfolioProductDescription?: Maybe<Scalars['String']['output']>;
+  /** Field of the &quot;text&quot; Field Type added to the schema as part of the &quot;ProductDescription&quot; Field Group */
+  tytulProduktu?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** Interface representing fields of the ACF &quot;ProductDescription&quot; Field Group */
+export type ProductDescription_FieldsGaleriazdjecArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /** The reading setting type */
@@ -12894,6 +12919,31 @@ export type ContactContentQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type ContactContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', contactForm?: { __typename?: 'ContactForm', adres?: string | null, eMail?: string | null, tel?: string | null } | null } | null };
 
+export type PortfolioContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PortfolioContentQuery = { __typename?: 'RootQuery', allGaleria?: { __typename?: 'RootQueryToGaleriaConnection', nodes: Array<{ __typename?: 'Galeria', productDescription?: { __typename?: 'ProductDescription', tytulProduktu?: string | null, portfolioProductDescription?: string | null, galeriazdjec?: { __typename?: 'AcfMediaItemConnection', nodes: Array<{ __typename?: 'MediaItem', mediaItemUrl?: string | null, slug?: string | null, title?: string | null, uri?: string | null }> } | null } | null }> } | null };
+
+export type PortfolioContentTwoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PortfolioContentTwoQuery = { __typename?: 'RootQuery', allGaleria?: { __typename?: 'RootQueryToGaleriaConnection', nodes: Array<{ __typename?: 'Galeria', productDescription?: { __typename?: 'ProductDescription', tytulProduktu?: string | null, portfolioProductDescription?: string | null, galeriazdjec?: { __typename?: 'AcfMediaItemConnection', nodes: Array<{ __typename?: 'MediaItem', mediaItemUrl?: string | null, slug?: string | null, title?: string | null, uri?: string | null }> } | null } | null }> } | null };
+
+export type SeoContactContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SeoContactContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', seo?: { __typename?: 'PostTypeSEO', metaDesc?: string | null, title?: string | null, opengraphDescription?: string | null, opengraphTitle?: string | null, opengraphImage?: { __typename?: 'MediaItem', sourceUrl?: string | null } | null } | null } | null };
+
+export type SeoHomeContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SeoHomeContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', seo?: { __typename?: 'PostTypeSEO', metaDesc?: string | null, title?: string | null, opengraphDescription?: string | null, opengraphTitle?: string | null, opengraphImage?: { __typename?: 'MediaItem', sourceUrl?: string | null } | null } | null } | null };
+
+export type SeoPortfolioContentQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SeoPortfolioContentQuery = { __typename?: 'RootQuery', pageBy?: { __typename?: 'Page', seo?: { __typename?: 'PostTypeSEO', metaDesc?: string | null, title?: string | null, opengraphDescription?: string | null, opengraphTitle?: string | null, opengraphImage?: { __typename?: 'MediaItem', sourceUrl?: string | null } | null } | null } | null };
+
 
 export const GetPostsDocument = gql`
     query GetPosts {
@@ -13369,3 +13419,248 @@ export type ContactContentQueryHookResult = ReturnType<typeof useContactContentQ
 export type ContactContentLazyQueryHookResult = ReturnType<typeof useContactContentLazyQuery>;
 export type ContactContentSuspenseQueryHookResult = ReturnType<typeof useContactContentSuspenseQuery>;
 export type ContactContentQueryResult = Apollo.QueryResult<ContactContentQuery, ContactContentQueryVariables>;
+export const PortfolioContentDocument = gql`
+    query PortfolioContent {
+  allGaleria {
+    nodes {
+      productDescription {
+        tytulProduktu
+        portfolioProductDescription
+        galeriazdjec {
+          nodes {
+            mediaItemUrl
+            slug
+            title(format: RENDERED)
+            uri
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __usePortfolioContentQuery__
+ *
+ * To run a query within a React component, call `usePortfolioContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePortfolioContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePortfolioContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePortfolioContentQuery(baseOptions?: Apollo.QueryHookOptions<PortfolioContentQuery, PortfolioContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PortfolioContentQuery, PortfolioContentQueryVariables>(PortfolioContentDocument, options);
+      }
+export function usePortfolioContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PortfolioContentQuery, PortfolioContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PortfolioContentQuery, PortfolioContentQueryVariables>(PortfolioContentDocument, options);
+        }
+export function usePortfolioContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<PortfolioContentQuery, PortfolioContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<PortfolioContentQuery, PortfolioContentQueryVariables>(PortfolioContentDocument, options);
+        }
+export type PortfolioContentQueryHookResult = ReturnType<typeof usePortfolioContentQuery>;
+export type PortfolioContentLazyQueryHookResult = ReturnType<typeof usePortfolioContentLazyQuery>;
+export type PortfolioContentSuspenseQueryHookResult = ReturnType<typeof usePortfolioContentSuspenseQuery>;
+export type PortfolioContentQueryResult = Apollo.QueryResult<PortfolioContentQuery, PortfolioContentQueryVariables>;
+export const PortfolioContentTwoDocument = gql`
+    query PortfolioContentTwo {
+  allGaleria {
+    nodes {
+      productDescription {
+        tytulProduktu
+        portfolioProductDescription
+        galeriazdjec {
+          nodes {
+            mediaItemUrl
+            slug
+            title(format: RENDERED)
+            uri
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __usePortfolioContentTwoQuery__
+ *
+ * To run a query within a React component, call `usePortfolioContentTwoQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePortfolioContentTwoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePortfolioContentTwoQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function usePortfolioContentTwoQuery(baseOptions?: Apollo.QueryHookOptions<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>(PortfolioContentTwoDocument, options);
+      }
+export function usePortfolioContentTwoLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>(PortfolioContentTwoDocument, options);
+        }
+export function usePortfolioContentTwoSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>(PortfolioContentTwoDocument, options);
+        }
+export type PortfolioContentTwoQueryHookResult = ReturnType<typeof usePortfolioContentTwoQuery>;
+export type PortfolioContentTwoLazyQueryHookResult = ReturnType<typeof usePortfolioContentTwoLazyQuery>;
+export type PortfolioContentTwoSuspenseQueryHookResult = ReturnType<typeof usePortfolioContentTwoSuspenseQuery>;
+export type PortfolioContentTwoQueryResult = Apollo.QueryResult<PortfolioContentTwoQuery, PortfolioContentTwoQueryVariables>;
+export const SeoContactContentDocument = gql`
+    query SeoContactContent {
+  pageBy(pageId: 85) {
+    seo {
+      metaDesc
+      title
+      opengraphDescription
+      opengraphTitle
+      opengraphImage {
+        sourceUrl(size: LARGE)
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useSeoContactContentQuery__
+ *
+ * To run a query within a React component, call `useSeoContactContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSeoContactContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSeoContactContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSeoContactContentQuery(baseOptions?: Apollo.QueryHookOptions<SeoContactContentQuery, SeoContactContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SeoContactContentQuery, SeoContactContentQueryVariables>(SeoContactContentDocument, options);
+      }
+export function useSeoContactContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SeoContactContentQuery, SeoContactContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SeoContactContentQuery, SeoContactContentQueryVariables>(SeoContactContentDocument, options);
+        }
+export function useSeoContactContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<SeoContactContentQuery, SeoContactContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SeoContactContentQuery, SeoContactContentQueryVariables>(SeoContactContentDocument, options);
+        }
+export type SeoContactContentQueryHookResult = ReturnType<typeof useSeoContactContentQuery>;
+export type SeoContactContentLazyQueryHookResult = ReturnType<typeof useSeoContactContentLazyQuery>;
+export type SeoContactContentSuspenseQueryHookResult = ReturnType<typeof useSeoContactContentSuspenseQuery>;
+export type SeoContactContentQueryResult = Apollo.QueryResult<SeoContactContentQuery, SeoContactContentQueryVariables>;
+export const SeoHomeContentDocument = gql`
+    query SeoHomeContent {
+  pageBy(pageId: 36) {
+    seo {
+      metaDesc
+      title
+      opengraphDescription
+      opengraphTitle
+      opengraphImage {
+        sourceUrl(size: LARGE)
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useSeoHomeContentQuery__
+ *
+ * To run a query within a React component, call `useSeoHomeContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSeoHomeContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSeoHomeContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSeoHomeContentQuery(baseOptions?: Apollo.QueryHookOptions<SeoHomeContentQuery, SeoHomeContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SeoHomeContentQuery, SeoHomeContentQueryVariables>(SeoHomeContentDocument, options);
+      }
+export function useSeoHomeContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SeoHomeContentQuery, SeoHomeContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SeoHomeContentQuery, SeoHomeContentQueryVariables>(SeoHomeContentDocument, options);
+        }
+export function useSeoHomeContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<SeoHomeContentQuery, SeoHomeContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SeoHomeContentQuery, SeoHomeContentQueryVariables>(SeoHomeContentDocument, options);
+        }
+export type SeoHomeContentQueryHookResult = ReturnType<typeof useSeoHomeContentQuery>;
+export type SeoHomeContentLazyQueryHookResult = ReturnType<typeof useSeoHomeContentLazyQuery>;
+export type SeoHomeContentSuspenseQueryHookResult = ReturnType<typeof useSeoHomeContentSuspenseQuery>;
+export type SeoHomeContentQueryResult = Apollo.QueryResult<SeoHomeContentQuery, SeoHomeContentQueryVariables>;
+export const SeoPortfolioContentDocument = gql`
+    query SeoPortfolioContent {
+  pageBy(pageId: 83) {
+    seo {
+      metaDesc
+      title
+      opengraphDescription
+      opengraphTitle
+      opengraphImage {
+        sourceUrl(size: LARGE)
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useSeoPortfolioContentQuery__
+ *
+ * To run a query within a React component, call `useSeoPortfolioContentQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSeoPortfolioContentQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSeoPortfolioContentQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSeoPortfolioContentQuery(baseOptions?: Apollo.QueryHookOptions<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>(SeoPortfolioContentDocument, options);
+      }
+export function useSeoPortfolioContentLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>(SeoPortfolioContentDocument, options);
+        }
+export function useSeoPortfolioContentSuspenseQuery(baseOptions?: Apollo.SuspenseQueryHookOptions<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useSuspenseQuery<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>(SeoPortfolioContentDocument, options);
+        }
+export type SeoPortfolioContentQueryHookResult = ReturnType<typeof useSeoPortfolioContentQuery>;
+export type SeoPortfolioContentLazyQueryHookResult = ReturnType<typeof useSeoPortfolioContentLazyQuery>;
+export type SeoPortfolioContentSuspenseQueryHookResult = ReturnType<typeof useSeoPortfolioContentSuspenseQuery>;
+export type SeoPortfolioContentQueryResult = Apollo.QueryResult<SeoPortfolioContentQuery, SeoPortfolioContentQueryVariables>;

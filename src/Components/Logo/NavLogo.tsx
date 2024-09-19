@@ -22,6 +22,7 @@ const NavLogo: FC<NavLogoProps> = async ({ width }) => {
 				alt={alt}
 				width={width}
 				height={200}
+				
 			/>
 		</>
 	);

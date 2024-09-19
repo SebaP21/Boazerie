@@ -1,11 +1,9 @@
-
-"use client"
+"use client";
 
 import { FC } from "react";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import styles from "./maps.module.css";
 import React from "react";
-
 
 export interface MapProps {
 	apiKey: string;
@@ -24,7 +22,7 @@ const center = (lat: number, lng: number) => ({
 });
 
 export const MapComponent: FC<MapProps> = ({ apiKey, lat, lng }) => {
-	const position = center(lat,lng)
+	const position = center(lat, lng);
 	return (
 		<div className={styles.mapWrapper}>
 			<LoadScript googleMapsApiKey={apiKey}>

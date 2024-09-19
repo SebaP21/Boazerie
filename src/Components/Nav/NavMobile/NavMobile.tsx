@@ -61,6 +61,7 @@ export const NavMobile = () => {
 								src={logo}
 								alt='logo'
 								width={200}
+								height={200}
 							/>
 						</Link>
 					</div>
