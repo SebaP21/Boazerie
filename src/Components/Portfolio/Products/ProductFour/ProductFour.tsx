@@ -26,7 +26,9 @@ const ProductFour = async () => {
 				</div>
 				<div className={styles.imageBox}>
 					{gallery?.map((image) => (
-						<div className={styles.imageItem}>
+						<div className={styles.imageItem}
+						key={image.slug}
+						>
 							<Image
 								src={image.mediaItemUrl || ""}
 								alt={image.title || "alt"}
