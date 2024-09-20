@@ -15,14 +15,15 @@ const NavLogo: FC<NavLogoProps> = async ({ width }) => {
 
 	const link = data.allLogo?.nodes[1].logoImage?.logoImage?.node.link;
 	const alt = `${data.allLogo?.nodes[1].title} ${data.allLogo?.nodes[1].logoImage?.logoImage?.node.slug}`;
+
+	const height = width;
 	return (
 		<>
 			<Image
 				src={link ? link : ""}
 				alt={alt}
 				width={width}
-				height={200}
-				
+				height={height}
 			/>
 		</>
 	);

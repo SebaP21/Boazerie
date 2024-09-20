@@ -11,6 +11,9 @@ export interface MapProps {
 	lng: number;
 }
 
+// const lat = 50.48194122314453;
+// const lng = 19.4344539642334;
+
 const mapContainerStyle = {
 	width: "100%",
 	height: "100%",

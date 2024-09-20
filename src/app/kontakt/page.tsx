@@ -1,21 +1,16 @@
 import { ContactCard } from "@/Components/Contact/ContactCardsBox/ContactCard/ContactCard";
 import { ContactCardsBox } from "@/Components/Contact/ContactCardsBox/ContactCardsBox";
-import { MapComponent } from "@/Components/Contact/Maps/Maps";
 import React from "react";
 import ContactHeader from "@/Components/Contact/ContactHeader/ContactHeader";
 import ContactForm from "@/Components/Contact/ContactForm/ContactForm";
 import ContactDetails from "@/Components/Contact/ContactDetails/ContactDetails";
-import SeoContact from "@/Components/Seo/SeoContact/SeoContact";
+import { SEO_CONTACT_CONTENT } from "@/graphql/SeoContactQuery";
+import client from "../../../lib/apolloClient";
+import { SeoContactContentQuery } from "../../../lib/generated/graphql";
 
 const Contact = () => {
-	const lat = 50.48194122314453;
-	const lng = 19.4344539642334;
-
-	const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string;
 	return (
 		<>
-
-			<SeoContact/>
 			<ContactHeader />
 			<ContactCardsBox>
 				<ContactCard>
@@ -24,16 +19,27 @@ const Contact = () => {
 				<ContactCard>
 					<ContactForm />
 				</ContactCard>
-				{/* <ContactCard>
-					<MapComponent
-						apiKey={apiKey}
-						lat={lat}
-						lng={lng}
-					/>
-				</ContactCard> */}
 			</ContactCardsBox>
 		</>
 	);
 };
 
 export default Contact;
+
+export async function generateMetadata() {
+	const { data } = await client.query<SeoContactContentQuery>({
+		query: SEO_CONTACT_CONTENT,
+	});
+
+	const seo = data.pageBy?.seo;
+
+	return {
+		title: seo?.title,
+		description: seo?.metaDesc as string,
+		openGraph: {
+			image: seo?.opengraphImage?.sourceUrl as string,
+			description: seo?.opengraphDescription as string,
+			title: seo?.opengraphTitle as string,
+		},
+	};
+}

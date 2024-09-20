@@ -9,8 +9,6 @@
 	min-width: 85%;
 	min-height: 10vh;
 	z-index: 1000;
-	/* margin: 0 3em; */
-	/* background-color: red; */
 }
 .links {
 	min-width: 30%;
@@ -25,6 +23,7 @@
 .links a {
 	transition: color 0.2s;
 }
+
 
 .links a:hover {
 	color: var(--accent-color);
