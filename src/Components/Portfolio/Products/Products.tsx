@@ -6,7 +6,7 @@ import styles from "./products.module.css";
 
 export const Products = () => {
 	return (
-		<section className={styles.productsWrapper}>
+		<section className={`${styles.productsWrapper} overflow-x-hidden`}>
 			<ProductOne />
 			<ProductTwo />
 			<ProductThree />

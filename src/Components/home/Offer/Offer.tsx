@@ -3,6 +3,7 @@ import styles from "./offer.module.css";
 import { OFFER_CONTENT } from "@/graphql/OfferQuery";
 import { OfferContentQuery } from "../../../../lib/generated/graphql";
 import client from "../../../../lib/apolloClient";
+import Divider from "@/Components/Divider/Divider";
 
 export const Offer = async () => {
 	const { data } = await client.query<OfferContentQuery>({
@@ -15,12 +16,13 @@ export const Offer = async () => {
 	return (
 		<>
 			<section className={styles.section}>
-				<div className={styles.break}></div>
+				
+				<Divider width={30} marginX="mx-auto"/>
 				<h2>Usługi</h2>
 				<div className={styles.offerBox}>
 					{data?.allOffer?.nodes.slice(1).map((card) => (
 						<div
-							className={styles.offerCard}
+							className={`${styles.offerCard} shadow-2xl`}
 							key={card.offerCard?.offerPicture?.node.mediaItemId}
 						>
 							<img
@@ -28,10 +30,10 @@ export const Offer = async () => {
 								alt={
 									card.offerCard?.offerPicture?.node.slug || "alt"
 								}
-							/>
+								/>
+								<h3 className="z-50">{card.offerCard?.offerTitle}</h3>
 							<div className={styles.offerCardShadow}></div>
 
-							<h3>{card.offerCard?.offerTitle}</h3>
 						</div>
 					))}
 				</div>

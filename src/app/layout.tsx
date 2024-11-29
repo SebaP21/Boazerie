@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en">
+      <html lang="pl">
         <head>
           <link
             href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap"

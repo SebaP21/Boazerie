@@ -2,7 +2,10 @@
 	max-width: 80%;
 	margin: 5em auto;
 	display: flex;
+	align-items: center;
+	flex-direction: column;
 	justify-content: space-evenly;
+	gap: 3em;
 }
 .faqTitle {
 	max-width: 500px;
@@ -70,7 +73,16 @@
 		min-width: 500px;
 		max-width: 500px;
 	}
+	
 }
+
+@media(min-width:1000px){
+	.sectionWrapper{
+		flex-direction: row;
+		
+	}
+}
+
 @media (max-width:850px){
 	.sectionWrapper{
 		flex-wrap: wrap;

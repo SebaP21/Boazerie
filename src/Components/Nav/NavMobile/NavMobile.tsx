@@ -55,7 +55,7 @@ export const NavMobile = () => {
 				</nav>
 			) : (
 				<div className={styles.navNotActive}>
-					<div className={styles.logo}>
+					<div className="max-w-[150px]">
 						<Link href={"/"}>
 							<Image
 								src={logo}

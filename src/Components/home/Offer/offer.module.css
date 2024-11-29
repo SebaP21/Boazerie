@@ -1,10 +1,10 @@
 .section {
 	background-color: var(--background-color);
-	padding: 2em 0;
+	padding: 2em 0 3em;
 }
 .section h2 {
 	font-size: 3rem;
-	padding: 1em;
+	padding-bottom: 1em;
 	text-align: center;
 }
 .offerBox {
@@ -21,7 +21,7 @@
 	text-align: center;
 	transition: transform 0.2s;
 	cursor: pointer;
-	box-shadow: 0px 1px 10px black;
+	
 	border-radius: 5px;
 	overflow: hidden;
 }
@@ -44,17 +44,15 @@
 	background-color: transparent;
 }
 
-.break {
-	margin: 0em auto;
-	content: "";
-	width: 10%;
-	height: 2px;
-	background-color: var(--accent-color);
-}
+
 
 .molding {
 	background-color: #fff;
 	min-height: 35svh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .moldingTitle {
 	margin: 0 auto;
@@ -62,7 +60,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* overflow: hidden; */
+	padding: 1em 0;
 }
 .moldingTitle p {
 	font-size: 12rem;
@@ -72,8 +70,6 @@
 }
 .moldingImageCarousel {
 	min-height: 75svh;
-	/* background-color: var(--background-color); */
-	/* background-image: url(../../../Assets//Pictures/sztukateria\ ścienna\ na\ schodach.jpg); */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -83,7 +79,7 @@
 }
 .moldingDescription {
 	min-height: 35svh;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.7);
 	width: 50%;
 	padding: 3em;
 	display: flex;
@@ -91,7 +87,6 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	border-radius: 5px;
-	/* box-shadow: 1px 1px 15px black; */
 }
 .moldingDescription .break {
 	margin: 0;
@@ -155,14 +150,14 @@
 }
 @media (max-width: 575.98px) { 
 	.offerCard{
-		min-width: 90%;
+		min-width: 95%;
 		
 	}
 	.moldingTitle p{
 		font-size: 3rem;
 	}
 	.moldingDescription{
-		min-width: 80%;
+		min-width: 85%;
 		padding:2em 1.5em;
 	}
 }

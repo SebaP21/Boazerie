@@ -1,6 +1,6 @@
 .showMobileButton {
 	position: absolute;
-	top: 2em;
+	
 	right: 0.2em;
 	z-index: 10000;
 	content: "";
@@ -43,8 +43,8 @@
 	right: 0;
 	z-index: 10000;
 	background-color: rgba(0, 0, 0, 0.918);
-	min-height: 90svh;
-	min-width: 70%;
+	min-height: 95svh;
+	min-width: 95%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -62,7 +62,7 @@
 }
 .button button {
 	font-size: 2rem;
-	padding: 2em;
+	
 	border: none;
 	color: var(--accent-color);
 }
@@ -71,20 +71,21 @@
 }
 
 .logo {
-	padding: 2em 0;
+	
+	max-width: 250px;
 }
 .navLinks {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
-	min-height: 40svh;
+	min-height:55svh;
 	align-items: center;
 	justify-content: space-evenly;
 }
 .navLinks a {
 	padding: 0.5em;
 	border-bottom: 1px solid var(--accent-color);
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	transition: 0.2s;
 }
 .navLinks a:hover {
@@ -101,6 +102,7 @@
 	min-height: 10vh;
 	z-index: 1000;
 	margin: 0 2em;
+	padding: 2em 0;
 }
 
 @keyframes rotate {
