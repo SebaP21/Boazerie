@@ -23,8 +23,8 @@ export const Offer = async () => {
 				/>
 				<h2>Usługi</h2>
 				<div className={styles.offerBox}>
-					{data?.allOffer?.nodes.slice(1).map((card) => (
-						<Link href={`/portfolio/#${card.slug}`}>
+					{data?.allOffer?.nodes.slice(1).map((card,index) => (
+						<Link href={`/portfolio/#${card.slug}`} key={index}>
 							<div
 								className={`${styles.offerCard} shadow-2xl`}
 								key={card.offerCard?.offerPicture?.node.mediaItemId}
