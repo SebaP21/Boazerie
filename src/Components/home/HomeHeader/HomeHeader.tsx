@@ -1,11 +1,11 @@
 import Link from "next/link";
 import styles from "./homeHeader.module.css";
-import { PAGE_HEADER_CONTENT } from "@/graphql/PageHeaderContent";
+import { PAGE_HEADER_CONTENT } from "@/graphql/PageHeaderContent"; 
 import client from "../../../../lib/apolloClient";
-import { PageHeaderQuery } from "../../../../lib/generated/graphql";
+import { PageHeaderContentQuery } from "../../../../lib/generated/graphql"; 
 
 export const HomeHeader = async () => {
-	const { data } = await client.query<PageHeaderQuery>({
+	const { data } = await client.query<PageHeaderContentQuery>({
 		query: PAGE_HEADER_CONTENT,
 		variables: { pageId: 36 },
 	});
