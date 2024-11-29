@@ -17,6 +17,7 @@
 	height: 100%;
 	display: flex;
 	padding-bottom: 1em;
+	margin: 0 auto;
 }
 .descriptionTitle {
 	min-width: 50%;
@@ -29,11 +30,11 @@
 	margin: 1em 0;
 }
 .descriptionTitle h3 {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 .descriptionDetails {
 	width: 40%;
-	padding: 1em 2em;
+	padding: 1em 1em;
 }
 .imageBox {
 	display: grid;
@@ -96,9 +97,12 @@
 @media (max-width: 575.98px) {
 	.sectionTitle p {
 		font-size: 3.5rem;
+		padding-top: 0.5em;
 	}
 	.description {
 		flex-direction: column;
+		margin: 0 auto;
+		
 	}
 	.descriptionTitle {
 		border-right: none;
@@ -107,9 +111,9 @@
 		margin: 1em;
 	}
 	.descriptionDetails {
-		width: 90%;
-		margin: 0 auto;
-		text-align: center;
+		width: 95%;
+		/* margin: 0 auto; */
+		/* text-align: center; */
 	}
 	.imageBox {
 		grid-template-columns: repeat(2, 1fr);

@@ -20,7 +20,7 @@ export const PortfolioHeader = async () => {
 				className={styles.portfolioHeader}
 				style={{ backgroundImage: `url(${backgroundImage})` || "none" }}
 			>
-				<h3>{title}</h3>
+				<h3 >{title}</h3>
 				<div className={styles.portfolioHeaderShadow}></div>
 			</header>
 		</>
