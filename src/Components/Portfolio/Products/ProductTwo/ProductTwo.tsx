@@ -4,6 +4,7 @@ import { PortfolioContentTwoQuery } from "../../../../../lib/generated/graphql";
 
 import styles from "./product_two.module.css";
 import Image from "next/image";
+import Divider from "@/Components/Divider/Divider";
 
 const ProductTwo = async () => {
 	const { data } = await client.query<PortfolioContentTwoQuery>({
@@ -17,14 +18,14 @@ const ProductTwo = async () => {
 		data.allGaleria?.nodes[4].productDescription?.galeriazdjec?.nodes;
 
 	return (
-		<article className={styles.productContent}>
+		<article className={styles.productContent} id="boazeria-kasetonowa">
 			<div className={styles.sectionTitle}>
 				<p>Kasetonowa</p>
 			</div>
 			<div className={styles.description}>
 				<div className={styles.descriptionDetails}>
 					<h3>{title}</h3>
-					<div className={styles.break}></div>
+					<Divider width={80}/>
 					<p>{description}</p>
 				</div>
 				<div className={styles.imageBox}>

@@ -1,10 +1,10 @@
 import { PAGE_HEADER_CONTENT } from "@/graphql/PageHeaderContent";
 import client from "../../../../lib/apolloClient";
-import { PageHeaderQuery } from "../../../../lib/generated/graphql";
+import { PageHeaderContentQuery } from "../../../../lib/generated/graphql";
 import styles from "./contact_header.module.css";
 
 const ContactHeader = async () => {
-	const { data } = await client.query<PageHeaderQuery>({
+	const { data } = await client.query<PageHeaderContentQuery>({
 		query: PAGE_HEADER_CONTENT,
 		variables: { pageId: 85 },
 	});

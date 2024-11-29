@@ -12,7 +12,8 @@
 	transition: color 0.2s;
 }
 .footer a:hover {
-	color: var(--accent-color);
+	/* color: var(--accent-color); */
+	border-bottom: 1px solid var(--accent-color);
 }
 .footerContent {
 	display: flex;
@@ -38,9 +39,9 @@
 	margin: 0 auto;
 	padding: 2em 0;
 }
-.copyright a {
+/* .copyright a {
 	color: var(--accent-color);
-}
+} */
 .copyright a:hover {
 	color: grey;
 }

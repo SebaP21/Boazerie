@@ -16,6 +16,7 @@ export const OFFER_CONTENT = gql`
 						}
 					}
 				}
+				slug
 			}
 		}
 	}

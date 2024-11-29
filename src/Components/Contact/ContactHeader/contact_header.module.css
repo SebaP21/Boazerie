@@ -15,6 +15,7 @@
 	margin-bottom: 1em;
 	z-index: 3;
 	max-width: 60%;
+	padding-top: 35svh;
 }
 .contactHeaderShadow {
 	position: absolute;

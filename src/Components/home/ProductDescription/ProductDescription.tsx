@@ -1,12 +1,12 @@
 import styles from "../ProductDescription/productDescription.module.css";
 
 import { ABOUT_CONTENT } from "@/graphql/AboutQuery";
-import { AboutQuery } from "../../../../lib/generated/graphql";
+import { AboutContentQuery } from "../../../../lib/generated/graphql";
 import client from "../../../../lib/apolloClient";
 import Divider from "@/Components/Divider/Divider";
 
 export const ProductDescription = async () => {
-	const { data } = await client.query<AboutQuery>({
+	const { data } = await client.query<AboutContentQuery>({
 		query: ABOUT_CONTENT,
 	});
 

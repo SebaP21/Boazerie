@@ -89,4 +89,7 @@
 	.sectionTitle p {
 		font-size: 3.5rem;
 	}
+	.description {
+		padding-top: 2em;
+	}
 }

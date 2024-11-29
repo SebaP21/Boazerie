@@ -19,7 +19,7 @@ const ProductOne = async () => {
 		data.allGaleria?.nodes[5].productDescription?.galeriazdjec?.nodes;
 
 	return (
-		<article className={styles.productContent}>
+		<article className={styles.productContent} id="boazeria-plycinowa">
 			<div className={styles.sectionTitle}>
 				<p>Płycinowa</p>
 			</div>
