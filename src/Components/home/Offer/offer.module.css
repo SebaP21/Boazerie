@@ -160,4 +160,7 @@
 		min-width: 85%;
 		padding:2em 1.5em;
 	}
+	.offerBox {
+		flex-direction: column-reverse;
+	}
 }

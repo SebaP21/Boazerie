@@ -112,8 +112,7 @@
 	}
 	.descriptionDetails {
 		width: 95%;
-		/* margin: 0 auto; */
-		/* text-align: center; */
+		
 	}
 	.imageBox {
 		grid-template-columns: repeat(2, 1fr);

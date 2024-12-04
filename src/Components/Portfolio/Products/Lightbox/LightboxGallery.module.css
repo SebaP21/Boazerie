@@ -1,0 +1,13 @@
+.thumbnail {
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .thumbnail:hover {
+    border-color: #999;
+  }
