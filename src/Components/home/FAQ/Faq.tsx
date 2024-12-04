@@ -12,7 +12,7 @@ export const Faq = async () => {
 	});
 
 	return (
-		<section className='w-full flex justify-center'>
+		<section className='w-full flex justify-center' id="faq">
 			<div className='w-[90%] flex flex-col gap-8 py-8'>
 				<div className='w-full flex flex-col justify-center items-center gap-4'>
 					<p className='font-serif text-lg'>Najczęściej zadawane pytania</p>

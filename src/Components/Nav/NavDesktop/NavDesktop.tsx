@@ -15,6 +15,7 @@ export const NavDesktop = () => {
 			<div className={styles.links}>
 				<Link href={"/"}>Strona główna</Link>
 				<Link href={"/portfolio"}>Portfolio</Link>
+				<Link href={"/#faq"}>FAQ</Link>
 				<Link href={"/kontakt"}>Kontakt</Link>
 			</div>
 		</nav>

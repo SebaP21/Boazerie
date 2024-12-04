@@ -17,7 +17,7 @@ export const Footer = () => {
 					</Link>
 				</div>
 				<div className={styles.menu}>
-					<h4>Menu</h4>
+					<p className="font-serif text-xl">Menu</p>
 					<Link href={"/portfolio"}>Portfolio</Link>
 					<Link href={"/kontakt"}>Kontakt</Link>
 					<Link href={"/polityka-prywatnosci"}>Polityka prywatności</Link>

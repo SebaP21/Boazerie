@@ -46,6 +46,12 @@ export const NavMobile = () => {
 							Portfolio
 						</Link>
 						<Link
+							href={"/#faq"}
+							onClick={handleClick}
+						>
+							FAQ
+						</Link>
+						<Link
 							href={"/kontakt"}
 							onClick={handleClick}
 						>
@@ -55,7 +61,7 @@ export const NavMobile = () => {
 				</nav>
 			) : (
 				<div className={styles.navNotActive}>
-					<div className="max-w-[150px]">
+					<div className='max-w-[150px]'>
 						<Link href={"/"}>
 							<Image
 								src={logo}
