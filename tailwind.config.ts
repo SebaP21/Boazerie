@@ -16,6 +16,9 @@ const config: Config = {
 			colors: {
 				accent: "var(--accent-color)",
 			},
+			fontFamily: {
+				serif: ['"DM Serif Display"', "serif"],
+			},
 		},
 	},
 	plugins: [],

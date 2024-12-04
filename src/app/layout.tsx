@@ -18,10 +18,10 @@ export default function RootLayout({
     <>
       <html lang="pl">
         <head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap"
             rel="stylesheet"
-          />
+          /> */}
         </head>
         <body className={workSans.className}>
           <NavDesktop />
