@@ -24,13 +24,13 @@ export const FaqCards: FC<FaqCardsProps> = ({ allFaqBox }) => {
 						onClick={() => handleExpand(index)}
 						className='cursor-pointer flex justify-between items-center p-4'
 					>
-						<h5
-							className={`text-lg font-semibold ${
+						<p
+							className={`text-lg font-semibold font-serif ${
 								expandedCardId === index ? "text-gray-600" : "text-black"
 							}`}
 						>
 							{data.title}
-						</h5>
+						</p>
 					</div>
 
 					<div
