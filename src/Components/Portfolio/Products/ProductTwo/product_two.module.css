@@ -20,12 +20,12 @@
 	grid-template-columns: 1fr 2fr;
 	justify-content: center;
 }
-.imageBox {
+/* .imageBox {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 10px;
 	justify-content: center;
-}
+} */
 .descriptionDetails h3 {
 	font-size: 2rem;
 }
