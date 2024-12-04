@@ -21,28 +21,30 @@ export const ProductDescription = async () => {
 
 	return (
 		<section
-			className={styles.section}
 			id='about'
+			className='w-full flex justify-center'
 		>
-			<div className={styles.contentWrapper}>
-				<div className={styles.title}>
+			<div className='w-[90%] flex flex-col gap-6 py-8 '>
+				<div className='text-center'>
 					<Divider
-						width={60}
+						width={80}
 						marginX='mx-auto'
 					/>
-					<h3 className="text-xl">{firstDescription}</h3>
+					<p className='text-xl font-serif'>{firstDescription}</p>
 				</div>
-				<div className={styles.contentBox}>
-					<div className={styles.contentImage}>
+				<div className='w-full flex flex-col gap-6'>
+					<div>
 						<img
 							src={imageLink || "Ładowanie obrazu.."}
 							alt={imageAlt || "Opis obrazu.."}
 						/>
 
-						<p className='pt-2 text-end font-serif'>Przykład naszej realizacji</p>
+						<p className='pt-2 text-end font-serif'>
+							Przykład naszej realizacji
+						</p>
 					</div>
-					<div className={styles.contentDescription}>
-						<h2>{sectionHeader}</h2>
+					<div className=''>
+						<h2 className='text-2xl'>{sectionHeader}</h2>
 						<Divider width={65} />
 						<p>{secondDescription}</p>
 					</div>

@@ -16,31 +16,44 @@ export const Offer = async () => {
 
 	return (
 		<>
-			<section className={styles.section}>
-				<Divider
-					width={30}
-					marginX='mx-auto'
-				/>
-				<h2>Usługi</h2>
-				<div className={styles.offerBox}>
-					{data?.allOffer?.nodes.slice(1).map((card,index) => (
-						<Link href={`/portfolio/#${card.slug}`} key={index}>
-							<div
-								className={`${styles.offerCard} shadow-2xl`}
-								key={card.offerCard?.offerPicture?.node.mediaItemId}
+			<section className='w-full flex justify-center bg-background'>
+				<div className='w-[90%] py-8 '>
+					<div className='w-[30%] mx-auto text-center pb-8'>
+						<Divider
+							width={100}
+							marginX='mx-auto'
+						/>
+						<h3 className='text-4xl'>Usługi</h3>
+					</div>
+					<div className='grid grid-cols-1 gap-12 '>
+						{data?.allOffer?.nodes.slice(1).reverse().map((card, index) => (
+							<Link
+								href={`/portfolio/#${card.slug}`}
+								key={index}
 							>
-								<img
-									src={
-										card.offerCard?.offerPicture?.node.mediaItemUrl || "obraz"
-									}
-									alt={card.offerCard?.offerPicture?.node.slug || "alt"}
-								/>
-								<h3 className='z-50'>{card.offerCard?.offerTitle}</h3>
+								<div
+									className={`relative rounded-md shadow-2xl overflow-hidden transition-all hover:scale-105`}
+									key={card.offerCard?.offerPicture?.node.mediaItemId}
+								>
+									<img
+										src={
+											card.offerCard?.offerPicture?.node.mediaItemUrl || "obraz"
+										}
+										alt={card.offerCard?.offerPicture?.node.slug || "alt"}
+										className='relative'
+									/>
+									<div className="absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0"></div>
+									<div className="bg-white relative">
+									<p className=' z-50 font-serif text-2xl text-center py-4'>
+										{card.offerCard?.offerTitle}
+									</p>
+									</div>
 
-								<div className={styles.offerCardShadow}></div>
-							</div>
-						</Link>
-					))}
+									<div className={styles.offerCardShadow}></div>
+								</div>
+							</Link>
+						))}
+					</div>
 				</div>
 			</section>
 			<section className={styles.molding}>
