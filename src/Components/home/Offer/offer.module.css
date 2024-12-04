@@ -79,7 +79,7 @@
 }
 .moldingDescription {
 	min-height: 35svh;
-	background-color: rgba(255, 255, 255, 1);
+	background-color: rgb(255, 255, 255);
 	width: 50%;
 	padding: 3em;
 	display: flex;

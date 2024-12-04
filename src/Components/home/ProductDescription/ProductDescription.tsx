@@ -39,7 +39,7 @@ export const ProductDescription = async () => {
 							alt={imageAlt || "Opis obrazu.."}
 						/>
 
-						<h6 className='pt-2'>Przykład naszej realizacji</h6>
+						<p className='pt-2 text-end font-serif'>Przykład naszej realizacji</p>
 					</div>
 					<div className={styles.contentDescription}>
 						<h2>{sectionHeader}</h2>
