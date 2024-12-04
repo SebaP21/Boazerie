@@ -27,7 +27,7 @@ export const HomeHeader = async () => {
 						<div className={styles.titleButton}>
 							
 								<Link 
-								className="border border-white px-6 py-3 relative z-10 rounded-xl"
+								className="border border-white px-6 py-3 relative z-10 rounded-xl transition-all hover:bg-white hover:text-black"
 								href={"#about"}>Sprawdź</Link>
 						
 						</div>

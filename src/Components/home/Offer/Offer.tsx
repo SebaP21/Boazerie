@@ -26,53 +26,64 @@ export const Offer = async () => {
 						<h3 className='text-4xl'>Usługi</h3>
 					</div>
 					<div className='grid grid-cols-1 gap-12 '>
-						{data?.allOffer?.nodes.slice(1).reverse().map((card, index) => (
-							<Link
-								href={`/portfolio/#${card.slug}`}
-								key={index}
-							>
-								<div
-									className={`relative rounded-md shadow-2xl overflow-hidden transition-all hover:scale-105`}
-									key={card.offerCard?.offerPicture?.node.mediaItemId}
+						{data?.allOffer?.nodes
+							.slice(1)
+							.reverse()
+							.map((card, index) => (
+								<Link
+									href={`/portfolio/#${card.slug}`}
+									key={index}
 								>
-									<img
-										src={
-											card.offerCard?.offerPicture?.node.mediaItemUrl || "obraz"
-										}
-										alt={card.offerCard?.offerPicture?.node.slug || "alt"}
-										className='relative'
-									/>
-									<div className="hidden absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0 "></div>
-									<div className="bg-white relative">
-									<p className=' z-50 font-serif text-2xl text-center py-4'>
-										{card.offerCard?.offerTitle}
-									</p>
-									</div>
+									<div
+										className={`relative rounded-md shadow-2xl overflow-hidden transition-all hover:scale-105`}
+										key={card.offerCard?.offerPicture?.node.mediaItemId}
+									>
+										<img
+											src={
+												card.offerCard?.offerPicture?.node.mediaItemUrl ||
+												"obraz"
+											}
+											alt={card.offerCard?.offerPicture?.node.slug || "alt"}
+											className='relative'
+										/>
+										<div className='hidden absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0 '></div>
+										<div className='bg-white relative'>
+											<p className=' z-50 font-serif text-2xl text-center py-4'>
+												{card.offerCard?.offerTitle}
+											</p>
+										</div>
 
-									<div className={styles.offerCardShadow}></div>
-								</div>
-							</Link>
-						))}
+										<div className={styles.offerCardShadow}></div>
+									</div>
+								</Link>
+							))}
 					</div>
 				</div>
 			</section>
-			<section className={styles.molding}>
-				<div className={styles.moldingTitle}>
-					<p>Sztukateria</p>
+			<section className='w-full bg-white '>
+				<div className='w-full flex justify-center items-center text-black opacity-30 uppercase text-4xl font-extrabold pt-12 pb-4 '>
+					<p className='w-full text-center tracking-widest text-outline text-white pb-6'>
+						Sztukateria
+					</p>
 				</div>
 				<div
-					className={styles.moldingImageCarousel}
+					className='w-full flex justify-center items-center py-24'
 					style={{ backgroundImage: `url(${moldingLink})` }}
 				>
-					<div className={styles.moldingDescription}>
-						<h3>{data?.allOffer?.nodes[0].offerCard?.offerTitle}</h3>
-						<div className={styles.break}></div>
-						<article>
-							{data?.allOffer?.nodes[0].offerCard?.offerDescription}
+					<div className='w-[90%] p-6 bg-white rounded-md'>
+						<article className="flex flex-col gap-1">
+							<h3 className='text-3xl'>
+								{data?.allOffer?.nodes[0].offerCard?.offerTitle}
+							</h3>
+							<Divider width={50}/>
+							<div className="pb-4">{data?.allOffer?.nodes[0].offerCard?.offerDescription}</div>
+							<Link
+								href={`/portfolio/#${data.allOffer?.nodes[0].slug}`}
+								className='w-[50%] border border-black px-2 text-center py-2 relative z-10 rounded-xl transition-all hover:bg-accent hover:text-black'
+							>
+								Zobacz więcej
+							</Link>
 						</article>
-						<Link href={`/portfolio/#${data.allOffer?.nodes[0].slug}`}>
-							<button>Zobacz więcej</button>
-						</Link>
 					</div>
 				</div>
 			</section>
