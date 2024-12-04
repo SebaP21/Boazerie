@@ -3,7 +3,6 @@
 	display: flex;
 	align-items: flex-end;
 	min-height: 100svh;
-	/* background-image: url("../../../Assets/Pictures/sztukateria\ w\ stylu\ angielskim\ w\ salonie.jpg"); */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -38,6 +37,7 @@
 	z-index: 2;
 	border: 1px solid white;
 	transition: 0.3s;
+	margin-top: 2em;
 }
 .titleButton button:hover {
 	background-color: #fff;
@@ -46,6 +46,6 @@
 @media (max-width: 767.98px) { 
 	.titleBox{
 		margin-bottom: 7em;
-		gap: 2em;
+		gap: 4em;
 	}
  }

@@ -38,9 +38,7 @@
 	margin: 0 auto;
 	padding: 2em 0;
 }
-/* .copyright a {
-	color: var(--accent-color);
-} */
+
 .copyright a:hover {
 	color: var(--accent-color)
 }
