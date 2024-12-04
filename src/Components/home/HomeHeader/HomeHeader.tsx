@@ -25,9 +25,11 @@ export const HomeHeader = async () => {
 							<h1>{data.pageBy?.pageHeading?.pageHeader}</h1>
 						</div>
 						<div className={styles.titleButton}>
-							<button>
-								<Link href={"#about"}>Sprawdź</Link>
-							</button>
+							
+								<Link 
+								className="border border-white px-6 py-3 relative z-10 rounded-xl"
+								href={"#about"}>Sprawdź</Link>
+						
 						</div>
 					</div>
 					<div className={styles.sectionShadow}></div>
