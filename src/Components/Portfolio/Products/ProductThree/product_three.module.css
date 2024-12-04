@@ -1,4 +1,4 @@
-.productContent {
+/* .productContent {
 	width: 70%;
 	padding-bottom: 3em;
 }
@@ -32,8 +32,8 @@
 .descriptionDetails {
 	display: flex;
 	flex-direction: column;
-	/* padding: 0 2em; */
-	/* gap: 1em; */
+	padding: 0 2em; */
+	/* gap: 1em;
 }
 .imageItem {
 	position: relative;
@@ -81,7 +81,7 @@
 	}
 	.description {
 		/* margin: 0 1em; */
-		flex-direction: column-reverse;
+		/* flex-direction: column-reverse;
 		gap: 1em;
 		min-width: 100%;
 	}
@@ -132,4 +132,4 @@
 		gap: 2em;
 	}
 	
-}
+} */ 
