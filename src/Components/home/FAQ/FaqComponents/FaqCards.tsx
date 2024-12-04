@@ -26,7 +26,7 @@ export const FaqCards: FC<FaqCardsProps> = ({ allFaqBox }) => {
 					>
 						<h4
 							className={`text-lg font-semibold ${
-								expandedCardId === index ? "text-accent" : "text-black"
+								expandedCardId === index ? "text-gray-600" : "text-black"
 							}`}
 						>
 							{data.title}

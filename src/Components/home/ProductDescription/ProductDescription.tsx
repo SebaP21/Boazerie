@@ -30,7 +30,7 @@ export const ProductDescription = async () => {
 						width={60}
 						marginX='mx-auto'
 					/>
-					<h5>{firstDescription}</h5>
+					<h3 className="text-xl">{firstDescription}</h3>
 				</div>
 				<div className={styles.contentBox}>
 					<div className={styles.contentImage}>
