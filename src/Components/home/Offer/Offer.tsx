@@ -44,7 +44,7 @@ export const Offer = async () => {
 												"obraz"
 											}
 											alt={card.offerCard?.offerPicture?.node.slug || "alt"}
-											className='relative'
+											className='relative min-h-[60svh] md:min-h-[40svh] lg:min-h-[50svh]'
 										/>
 										<div className='hidden absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0 lg:flex'></div>
 										<div className='bg-white relative'>
