@@ -38,17 +38,19 @@ export const Offer = async () => {
 										className={`relative rounded-md shadow-2xl overflow-hidden transition-all hover:scale-105`}
 										key={card.offerCard?.offerPicture?.node.mediaItemId}
 									>
-										<img
-											src={
-												card.offerCard?.offerPicture?.node.mediaItemUrl ||
-												"obraz"
-											}
-											alt={card.offerCard?.offerPicture?.node.slug || "alt"}
-											className='relative min-h-[60svh] md:min-h-[40svh] lg:min-h-[50svh]'
-										/>
-										<div className='hidden absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0 lg:flex'></div>
+										<div className='relative aspect-w-16 aspect-h-9'>
+											<img
+												src={
+													card.offerCard?.offerPicture?.node.mediaItemUrl ||
+													"obraz"
+												}
+												alt={card.offerCard?.offerPicture?.node.slug || "alt"}
+												className='w-full h-full object-cover'
+											/>
+											<div className='hidden absolute inset-0 bg-black opacity-20 transition-opacity duration-300 hover:opacity-0 lg:flex'></div>
+										</div>
 										<div className='bg-white relative'>
-											<p className=' z-50 font-serif text-2xl text-center py-4 px-2'>
+											<p className='z-50 font-serif text-2xl text-center py-4 px-2'>
 												{card.offerCard?.offerTitle}
 											</p>
 										</div>
