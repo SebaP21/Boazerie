@@ -70,7 +70,7 @@ export const Offer = async () => {
 					className='w-full flex justify-center items-center py-24 md:min-h-[70svh]'
 					style={{ backgroundImage: `url(${moldingLink})` }}
 				>
-					<div className='w-[90%] p-6 bg-white rounded-md sm:w-[75%] md:w-[60%] xl:p-12'>
+					<div className='w-[90%] p-6 bg-white rounded-md sm:w-[75%] md:w-[60%] xl:p-12 xl:w-[1100px]'>
 						<article className="flex flex-col gap-1">
 							<h3 className='text-3xl'>
 								{data?.allOffer?.nodes[0].offerCard?.offerTitle}
