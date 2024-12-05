@@ -20,7 +20,7 @@ const ContactHeader = async () => {
 					backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : "Ładowanie",
 				}}
 			>
-				<h3>{data.pageBy?.pageHeading?.pageHeader}</h3>
+				<h3 >{data.pageBy?.pageHeading?.pageHeader}</h3>
 				<div className={styles.contactHeaderShadow}></div>
 			</section>
 		</>

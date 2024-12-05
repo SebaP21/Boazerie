@@ -14,7 +14,7 @@ export const FaqCards: FC<FaqCardsProps> = ({ allFaqBox }) => {
 	};
 
 	return (
-		<div className='w-full border border-break border-b-transparent flex flex-col rounded-sm sm:w-[90%] sm:mx-auto md:w-[80%] lg:w-[70%] xl:w-[60%]'>
+		<div className='w-full border border-gray-200 border-b-transparent flex flex-col rounded-sm md:w-[80%] md:mx-auto'>
 			{allFaqBox?.nodes.map((data, index) => (
 				<div
 					key={index}

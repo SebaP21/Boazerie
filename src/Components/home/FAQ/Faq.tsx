@@ -13,8 +13,8 @@ export const Faq = async () => {
 
 	return (
 		<section className='w-full flex justify-center' id="faq">
-			<div className='w-[90%] flex flex-col gap-8 py-8'>
-				<div className='w-full flex flex-col justify-center items-center gap-4'>
+			<div className='w-[90%] flex flex-col gap-8 py-8 sm:w-[75%] lg:flex-row lg:w-[90%] xl:w-[1100px]'>
+				<div className='w-full flex flex-col justify-center items-center lg:justify-start gap-4 lg:w-[40%] lg:gap-8'>
 					<p className='font-serif text-lg'>Najczęściej zadawane pytania</p>
 					<h2 className='text-4xl'>FAQ</h2>
 					<Divider width={30} />
@@ -25,7 +25,7 @@ export const Faq = async () => {
 					</p>
 					<Link
 						href={"/kontakt"}
-						className='w-[50%] border border-black px-2 text-center py-2 relative z-10 rounded-xl transition-all hover:bg-accent hover:text-black'
+						className='w-[50%] md:w-[35%] lg:w-[30%] xl:w-[20%] border border-black px-2 text-center py-2 relative z-10 rounded-xl transition-all hover:bg-accent hover:text-black'
 					>
 						Kontakt
 					</Link>

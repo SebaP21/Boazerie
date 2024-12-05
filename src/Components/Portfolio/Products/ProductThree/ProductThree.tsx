@@ -2,8 +2,8 @@ import { PORTFOLIO_CONTENT_TWO } from "@/graphql/PortfolioQueryTwo";
 import client from "../../../../../lib/apolloClient";
 import { PortfolioContentTwoQuery } from "../../../../../lib/generated/graphql";
 
-import styles from "./product_three.module.css";
-import Image from "next/image";
+// import styles from "./product_three.module.css";
+// import Image from "next/image";
 import Divider from "@/Components/Divider/Divider";
 import LightboxGallery from "../Lightbox/Lightbox";
 
@@ -29,13 +29,13 @@ const ProductThree = async () => {
 			className='w-full flex justify-center'
 			id='boazeria-panelowa'
 		>
-			<div className='w-[95%] flex flex-col gap-6'>
-				<div className='w-full flex justify-center items-center text-black opacity-30 uppercase text-5xl font-extrabold pt-12 pb-4 '>
+			<div className='w-[95%] flex flex-col gap-6 xl:w-[1100px]'>
+				<div className='w-full flex justify-center items-center text-black opacity-30 uppercase text-5xl font-extrabold pt-12 pb-4  sm:text-8xl xl:text-9xl'>
 					<p className='w-full text-center tracking-widest text-outline text-white '>
 						Panelowa
 					</p>
 				</div>
-				<div className='flex flex-col-reverse gap-6 '>
+				<div className='flex flex-col-reverse gap-6 md:flex-row-reverse md:items-center'>
 					<div className=''>
 						{lightboxImages && (
 							<LightboxGallery
@@ -46,10 +46,10 @@ const ProductThree = async () => {
 						)}
 					</div>
 
-					<div className='w-[80%] mx-auto'>
+					<div className='w-[80%] mx-auto '>
 						<h3 className='text-3xl text-center'>{title}</h3>
 						<Divider
-							width={100}
+							width={70}
 							marginX='mx-auto'
 						/>
 						<p className='text-center'>{description}</p>
