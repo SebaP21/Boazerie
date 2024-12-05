@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /polityka-prywatnosci
+
+# Host
+Host: https://boazerieangielskie.pl
+
+# Sitemaps
+Sitemap: https://boazerieangielskie.pl/sitemap.xml
