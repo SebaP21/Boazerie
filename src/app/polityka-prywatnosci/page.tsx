@@ -22,7 +22,7 @@ const PricacyPolicyPage = async () => {
 			<section className={styles.section}>
 				<article className={styles.content}>
 					<div>
-						Polityka prywatności opisuje zasady przetwarzania przez nas
+						Polityka prywatności opisuje zasady przetwarzani przez nas
 						informacji na Twój temat, w tym danych osobowych oraz ciasteczek,
 						czyli tzw. cookies. 1.Informacje ogólne 1. Niniejsza polityka
 						dotyczy Serwisu www, funkcjonującego pod adresem url:
