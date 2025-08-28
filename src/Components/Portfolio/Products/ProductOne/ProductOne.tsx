@@ -1,9 +1,9 @@
 import { PORTFOLIO_CONTENT_TWO } from "@/graphql/PortfolioQueryTwo";
 import client from "../../../../../lib/apolloClient";
 import { PortfolioContentTwoQuery } from "../../../../../lib/generated/graphql";
-import styles from "./product_one.module.css";
+// import styles from "./product_one.module.css";
 import LightboxGallery from "@/Components/Portfolio/Products/Lightbox/Lightbox";
-import Divider from "@/Components/Divider/Divider";
+// import Divider from "@/Components/Divider/Divider";
 
 const ProductOne = async () => {
 	const { data } = await client.query<PortfolioContentTwoQuery>({
