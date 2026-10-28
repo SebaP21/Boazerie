@@ -123,7 +123,7 @@ const PricacyPolicyPage = async () => {
 						dwa zasadnicze rodzaje plików cookies: „sesyjne” (session cookies)
 						oraz „stałe” (persistent cookies). Cookies „sesyjne” są plikami
 						tymczasowymi, które przechowywane są w urządzeniu końcowym
-						Użytkownika do czasu wylogowania, opuszczenia. strony internetowej
+						Użytkownika do czasu wylogowania, opuszczenia strony internetowej
 						lub wyłączenia oprogramowania (przeglądarki internetowej). „Stałe”
 						pliki cookies przechowywane są w urządzeniu końcowym Użytkownika
 						przez czas określony w parametrach plików cookies lub do czasu ich
