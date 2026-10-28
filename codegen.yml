@@ -1,4 +1,4 @@
-schema: https://portki.site/graphql
+schema: https://testowaniedewww.website/graphql
 documents: './**/*.{ts,tsx}'
 generates:
   ./lib/generated/graphql.tsx:
